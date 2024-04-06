@@ -2,12 +2,10 @@ import React from 'react'
 
 
 const Square = ({value, onSquareClick}) => {
-const handleClick =()=>{
-	setValue('X');
-}
+
 
 	return (
-		<button className="w-[5rem] h-[5rem] bg-white border-2 text-[blue] text-lg" onClick={onSquareClick}>{value}</button>
+		<button className="w-[10rem] h-[10rem] bg-white border-[1px] text-[blue] text-lg" onClick={onSquareClick}>{value}</button>
 	)
 }
 
