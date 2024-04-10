@@ -29,10 +29,11 @@ let status;
 if(winner){
 	status = 'Winner is ' + winner;
 }
-// if(!winner && !squares.includes(null)){
-// 	status = 'It is a draw' ;
-// }
-if(!winner){
+if(!winner && !squares.includes(null)){
+	status = 'It is a draw' ;
+	
+}
+if(!winner && squares.includes(null)){
 	status = 'Next Player is ' + (xIsNext? 'X' : 'O')
 }
 
