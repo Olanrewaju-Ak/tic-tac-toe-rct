@@ -4,7 +4,9 @@ import Game from './Game.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Game />
+  <React.StrictMode  >
+		<div>
+   	 <Game />
+		</div>
   </React.StrictMode>,
 )

@@ -42,13 +42,13 @@ function Game() {
   return (
 
       <div>
-      <h1 className="text-3xl font-bold underline ">TIC-TAC-TOE</h1>
-		<div>
-			<Board xIsNext={xIsNext} currentMove={currentMove} squares={currentSquares}  onPlay={handlePlay}/>
-		</div>
-      <div>
-				<ol>{moves}</ol>
-			</div>
+				<h1 className="text-7xl font-tac text-[yellow] tracking-[1rem]">TIC-TAC-TOE</h1>
+				<div>
+					<Board xIsNext={xIsNext} currentMove={currentMove} squares={currentSquares}  onPlay={handlePlay}/>
+				</div>
+				<div>
+					<ol>{moves}</ol>
+				</div>
       </div>
      
    

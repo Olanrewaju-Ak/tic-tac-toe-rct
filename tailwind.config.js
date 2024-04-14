@@ -2,7 +2,13 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+			fontFamily: {
+				jersey: ["Jersey 10 Charted", 'sans-serif'],
+				tac: ["Tac One", 'sans-serif'],
+				'jer-15':["Jersey 15 Charted", "sans-serif"]
+			}
+		},
   },
   plugins: [],
 }

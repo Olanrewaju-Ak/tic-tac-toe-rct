@@ -42,7 +42,7 @@ if(!winner && squares.includes(null)){
 			<h2>Board</h2>
 			<h3>{status}</h3>
 		
-			<div className="grid grid-cols-3">
+			<div className="grid grid-cols-3 ">
 				<Square value={squares[0]} onSquareClick={()=>handleClick(0)}/>
 				<Square value={squares[1]} onSquareClick={()=>handleClick(1)}/>
 				<Square value={squares[2]} onSquareClick={()=>handleClick(2)}/>
