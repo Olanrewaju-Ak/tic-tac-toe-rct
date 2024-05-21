@@ -27,25 +27,22 @@ const Board = ({xTurn,squares,handleClick, won,winningTiles}) => {
 			 // }
 		
 
-
-
-console.log('squares:', squares);
-let status;
-if(won && squares.includes(null)){
-	status = `Winner is ${xTurn? 'O': 'X'} !!!`;
-}
-if(!won && !squares.includes(null)){
-	status = 'It is a draw 😀' ;
+// let status;
+// if(won ){
+// 	status = `Winner is ${xTurn? 'O': 'X'} !!!`;
+// }
+// if(!won && !squares.includes(null)){
+// 	status = 'It is a draw 😀' ;
 	
-}
-if(!won && squares.includes(null)){
-	status = 'Next Player is ' + (xTurn? 'X' : 'O') 
-}
+// }
+// if(!won && squares.includes(null)){
+// 	status = 'Next Player is ' + (xTurn? 'X' : 'O') 
+// }
 
 
 	return (
 		<div>
-			<h3 className ="text-[red] text-5xl font-permanent-marker">{status}</h3>
+			{/* <h3 className ="text-[red] text-5xl font-permanent-marker">{status}</h3> */}
 		
 			<div className="grid grid-cols-3 ">
 				<Square value={squares[0]} onSquareClick={()=>handleClick(0)} isWinner ={winningTiles.includes(0)}/>

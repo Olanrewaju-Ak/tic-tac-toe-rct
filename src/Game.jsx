@@ -12,6 +12,7 @@ function Game() {
 	const [xTurn, setXTurn] = useState(true);
 	const [won, setWon]= useState(false);
 	const [winningTiles,setWinningTiles]=useState([]);
+	const [showMoves,setShowMoves]= useState(false);
 
 		 
 const WINNING_COMBO = [
@@ -42,8 +43,6 @@ useEffect(()=>{
 },[history])
 
 
-
-
 const handleClick = (i) => {
 
 	const nextSquares = currentSquares.slice();
@@ -68,9 +67,6 @@ const handleClick = (i) => {
 	}
 
 
-
-
-
 	//Setting Moves History
 	const moves = history.map((squares,move)=>{
 		let description;
@@ -82,24 +78,56 @@ const handleClick = (i) => {
 		}
 		return(
 			<li key={move} >
-				<button onClick={()=>jumpTo(move)}>{description}</button>
+				<button className="w-[150px] border-[1px] py-1 border-[#130B1B] hover:bg-[#ffff00a5] text-[white] font-bold" onClick={()=>jumpTo(move)}>{description}</button>
 			</li>
 		)
 	}
 	)
+
+
+	let status;
+if(won ){
+	status = `Winner is ${xTurn? 'O': 'X'} !!!`;
+}
+if(!won && !currentSquares.includes(null)){
+	status = 'It is a draw 😀' ;
 	
+}
+if(!won && currentSquares.includes(null)){
+	status = 'Next Player is : ' + (xTurn? 'X' : 'O') 
+}
+
+//To restart game
+const handleRestart = ()=> {
+	setShowMoves(false)
+	setHistory([Array(9).fill(null)])
+	setXTurn(true)
+	setWon(false)
+	setCurrentMove(0)
+	setWinningTiles([]);
+
+}
 
 
   return (
 
       <div>
-				<h1 className="text-7xl font-tac text-[yellow] tracking-[1rem]">TIC-TAC-TOE</h1>
-				<div>
-					<Board xTurn={xTurn} currentMove={currentMove} squares={currentSquares}  onPlay={handlePlay} handleClick={handleClick} won ={won} winningTiles={winningTiles}/>
+				<h1 className="text-6xl font-danfo text-[yellow] tracking-[1rem]">TIC-TAC-TOE</h1>
+				<h3 className ="text-[red] text-4xl font-permanent-marker my-4">{status}</h3>
+				<div className="flex gap-[10rem]">
+					<div>
+						<Board xTurn={xTurn} currentMove={currentMove} squares={currentSquares}  onPlay={handlePlay} handleClick={handleClick} won ={won} winningTiles={winningTiles}/>
+					</div>
+					<div>
+						<button className="w-[150px] text-center bg-[#7B47AE] border-[1px] py-1 border-[#130B1B] text-[white] font-bold" onClick={()=>{setShowMoves(!showMoves)}}>Show Moves List</button>
+						
+						<ol className={showMoves? "overflow-hidden transition-all duration-300 ease-in-out opacity-100 bg-[#7B47AE] text-center" : "opacity-0"}>
+							{moves}</ol>
+					</div>
 				</div>
 				<div>
-					<h3>moves</h3>
-					<ol>{moves}</ol>
+					<button className="w-[200px] text-center bg-[#7B47AE] border-[1px] py-1 border-[#130B1B] my-6 text-[1.2rem] text-[white] font-bold" onClick={
+					handleRestart}>Restart Game</button>
 				</div>
       </div>
      

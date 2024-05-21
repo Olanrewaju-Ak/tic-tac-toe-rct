@@ -7,7 +7,8 @@ export default {
 				jersey: ["Jersey 10 Charted", 'sans-serif'],
 				tac: ["Tac One", 'sans-serif'],
 				'jer-15':["Jersey 15 Charted", "sans-serif"],
-				'permanent-marker':["Permanent Marker", 'cursive']
+				'permanent-marker':["Permanent Marker", 'cursive'],
+				danfo: ["Danfo", 'serif']
 			}
 		},
   },

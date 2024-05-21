@@ -1,6 +1,6 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Jersey+10+Charted&family=Jersey+15+Charted&family=Permanent+Marker&family=Tac+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Danfo&family=Jersey+10+Charted&family=Jersey+15+Charted&family=Permanent+Marker&family=Tac+One&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,19 +8,14 @@
 
 
 body {
-  margin: 0;
+  margin: 2rem 0;
   display: flex;
  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-	background-color: #1E3A2B;
+	background-color: #130B1B;
 }
-/* 
-.jersey-10 charted-regular {
-  font-family: "Jersey 10 Charted", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-} */
+
 
 
 
