@@ -112,7 +112,7 @@ const handleRestart = ()=> {
   return (
 
       <div>
-				<h1 className="text-6xl font-danfo text-[yellow] tracking-[1rem]">TIC-TAC-TOE</h1>
+				<h1 className="text-6xl font-danfo text-[yellow] tracking-wider">TIC-TAC-TOE</h1>
 				<h3 className ="text-[red] text-4xl font-permanent-marker my-4">{status}</h3>
 				<div className="flex gap-[10rem]">
 					<div>
